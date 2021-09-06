@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Graph : MonoBehaviour
+{
+    public Dictionary<string, float> graphValues;
+    public UIManager uI;
+    public Transform cube;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    public void AddGraph()
+    {
+        float index = -2;
+        graphValues.Add(uI.dateInput.text, uI.miles);
+        Transform cubeInstance = Instantiate(cube, transform.position + Vector3.right * index, Quaternion.identity);
+        cubeInstance.localScale = new Vector3(1, graphValues[uI.dateInput.text].Value, 1);
+        index++;
+    }
+}
